@@ -6,3 +6,11 @@ class Category(models.Model):
     
     def __str__(self):
         return self.name
+
+class Photo(models.Model):
+    category = models.ForeignKey(Category, null=True, on_delete=models.SET_NULL, blank=True)
+    image = models.ImageField(null=False, blank=False)
+    description = models.TextField() 
+
+    def __str__(self):
+        return self.description
