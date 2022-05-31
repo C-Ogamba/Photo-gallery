@@ -10,7 +10,7 @@
                         </div>
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item"><a href="{% url 'gallery' %}" class="btn">All</a></li>
-                            {% for category in categories%}
+                            {% for category in categories %}
                             <li class="list-group-item"><a href="{% url 'gallery' %}?category={{category.name}}" class="btn">{{ category.name }}</a></li>
                             {% endfor %}
                             <a href="{% url 'add' %}" class="btn btn-dark btn-block btn-sm"> Add Photo</a>

@@ -47,13 +47,14 @@ def addPhoto(request):
 def search(request):
     if request.method == 'POST':
         searched = request.POST['searched']
-        categories = Photo.objects.filter(category__name__contains= searched)
-        ctx = {'searched': searched, 'categories': categories }
+        albums = Photo.objects.filter(category__name__contains= searched)
+        ctx = {'searched': searched, 'albums': albums }
         return render(request, 'photos/search.html', ctx)
     else:
         return render(request, 'photos/search.html')
 
 
 def main(request):
+
 
     return render(request, 'photos/main.html', {'main':main})
