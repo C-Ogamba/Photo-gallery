@@ -1,5 +1,5 @@
 # Photo Gallery
-A application which allows to develop a personal gallery application that you display your photos for others to see
+A application which allows you to develop a personal gallery application where you can display your photos for others to see
 
 ##### By Kemunto Cindy
 
