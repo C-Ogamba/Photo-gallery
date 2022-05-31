@@ -1,1 +1,1 @@
-web: gunicorn photo-gallery.wsgi 
+web: gunicorn photo-gallery.wsgi --log-file - --log-level debug --preload --workers 1
