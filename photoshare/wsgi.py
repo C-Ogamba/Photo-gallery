@@ -8,9 +8,15 @@ https://docs.djangoproject.com/en/4.0/howto/deployment/wsgi/
 """
 
 import os
+import sys
+
+sys.path.append(os.path.dirname(os.path.abspath(__file__)) + '/..' )
+sys.path.append(os.path.dirname(os.path.abspath(__file__)) + '/../project')
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'photo-gallery.settings')
+os.environ['DJANGO_SETTINGS_MODULE'] = 'project.settings'
+
+# os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'photo-gallery.settings')
 
 application = get_wsgi_application()
