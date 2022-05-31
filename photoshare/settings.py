@@ -33,7 +33,7 @@ SECRET_KEY = 'django-insecure-=6d!t@0&$3+&n1+y#qe=^05@@s5t-saqwlp5m_v2ky^z%t=%@4
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1']
+# ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
@@ -177,4 +177,4 @@ else:
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
 
-# ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
+# ALLOWED_HOSTS=config('ALLOWED_HOSTS')
