@@ -33,7 +33,7 @@ SECRET_KEY = 'django-insecure-=6d!t@0&$3+&n1+y#qe=^05@@s5t-saqwlp5m_v2ky^z%t=%@4
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
@@ -85,12 +85,12 @@ WSGI_APPLICATION = 'photoshare.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 
 # Password validation
@@ -137,6 +137,7 @@ STATICFILES_DIRS = [
 ]
 
 MEDIA_ROOT = BASE_DIR / 'static/images'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/images')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
@@ -145,14 +146,14 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # adding config
 cloudinary.config( 
-  cloud_name = "cloud_name", 
-  api_key = "api_key", 
-  api_secret = "api_secret" 
+    cloud_name="dih0q5sju", 
+    api_key="111628696763233", 
+    api_secret="EDu9vWI4Ih3EOV5823Yc0JUlEoU" 
 )
 
 MODE=config("MODE", default="dev")
-SECRET_KEY = config('SECRET_KEY')
-DEBUG = config('DEBUG', default=False, cast=bool)
+SECRET_KEY=config('SECRET_KEY')
+DEBUG=config('DEBUG', default=False, cast=bool)
 # development
 if config('MODE')=="dev":
    DATABASES = {
@@ -161,7 +162,6 @@ if config('MODE')=="dev":
            'NAME': config('DB_NAME'),
            'USER': config('DB_USER'),
            'PASSWORD': config('DB_PASSWORD'),
-           'HOST': config('DB_HOST'),
            'PORT': '',
        }
        
@@ -177,4 +177,4 @@ else:
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
 
-ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
+# ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
