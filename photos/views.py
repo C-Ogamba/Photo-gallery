@@ -54,7 +54,7 @@ def search(request):
         return render(request, 'photos/search.html')
 
 
-def main(request):
+# def main(request):
+    
 
-
-    return render(request, 'photos/main.html', {'main':main})
+#     return render(request, 'photos/main.html', {'main':main})

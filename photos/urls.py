@@ -6,6 +6,6 @@ urlpatterns =[
     path('photo/<str:pk>/', views.viewPhoto, name='photo'),
     path('add/', views.addPhoto, name='add'),
     path('search/', views.search, name='search'),
-    path('main/', views.main, name='main')
+    # path('main/', views.main, name='main')
 ]
 
